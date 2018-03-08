@@ -1,8 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { DataTablesModule } from 'angular-datatables';
 
 import { AppComponent } from './app.component';
+import { HttpModule } from '@angular/http';
+import { LocalStorageService } from './LocalStorageService';
+
+
+
 
 
 @NgModule({
@@ -10,9 +15,9 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,DataTablesModule,HttpModule
   ],
-  providers: [],
+  providers: [LocalStorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
