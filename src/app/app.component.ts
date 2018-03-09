@@ -90,19 +90,23 @@ export class AppComponent implements OnInit {
         this.persons = persons;
         // Calling the DT trigger to manually render the table
         this.dtTrigger.next();
+        this.localStorageService.setData('data',persons);
       });
 
      
-this.localStorageService.setData('data',this.persons);
+//this.localStorageService.setData('data',this.persons);
       //localStorage.setItem();
       console.log(this.localStorageService.getData('data'));
 
-
+      console.log(this.persons);
       
   }
 
   private extractData(res: Response) {
     const body = res.json();
+    //console.log( body.data);
+    
+    
     return body.data || {};
   }
 }
